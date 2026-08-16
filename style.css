@@ -402,48 +402,57 @@ body {
 }
 
 .coach-card {
-    background: var(--bg-secondary);
+    /* Match visual style with rules-box */
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
-    padding: 35px 20px;
+    padding: 26px;
     text-align: center;
     transition: var(--transition);
-    box-shadow: none;
+    box-shadow: var(--shadow-soft);
 }
 
 .coach-card:hover {
     transform: translateY(-5px);
-    background: var(--bg-card-hover);
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
     border-color: var(--border-gold);
     box-shadow: var(--shadow-glow);
 }
 
-.coach-avatar {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 20px;
-    border-radius: 50%;
-    background: var(--bg-primary);
-    border: 1px solid var(--border-gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: var(--accent-gold);
+/* Hide any circular avatar elements if present */
+.coach-avatar { display: none; }
+
+.coach-card .card-header {
+    text-align: center;
+    margin-bottom: 18px;
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
-.coach-name {
-    font-size: 1.2rem;
+.coach-card .card-header h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* Specialties: no numbering, bold centered items */
+.coach-specialty-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.coach-specialty-list li {
     font-weight: 700;
+    display: block;
     margin-bottom: 8px;
 }
 
-.coach-specialty {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    line-height: 1.5;
-}
+/* Ensure no pseudo-icon before items */
+.coach-specialty-list li::before { content: none; }
+
 
 /* ==========================================================================
    Rules Box (itemized list instead of accordion)
